@@ -41,10 +41,8 @@ qa_prompt = ChatPromptTemplate.from_messages([
 
 history_rewriter_prompt = ChatPromptTemplate.from_messages([
     ("system", (
-        "Ubah pertanyaan terakhir menjadi pertanyaan mandiri dengan subjek yang jelas "
-        "berdasarkan riwayat percakapan di atas. "
-        "Jika ada kata ganti seperti 'nya', 'itu', 'tersebut', atau referensi tidak jelas, "
-        "ganti dengan subjek nyata dari percakapan sebelumnya. "
+        "Ubah pertanyaan terakhir menjadi pertanyaan mandiri dengan subjek yang jelas berdasarkan riwayat percakapan di atas. "
+        "Jika ada kata ganti seperti 'nya', 'itu', 'tersebut', atau referensi tidak jelas, ganti dengan subjek nyata dari percakapan sebelumnya. "
         "Cukup tulis pertanyaan yang sudah diubah, JANGAN menjawab atau menjelaskan."
     )),
     MessagesPlaceholder(variable_name="chat_history"),

@@ -131,7 +131,7 @@
       "name": "Konservatif",
       "min_score": 25,
       "max_score": 40,
-      "description": "Anda lebih memprioritaskan perlindungan pokok investasi, arus kas yang likuid dengan fluktuasi nilai investasi yang rendah. Portofolio investasi yang sesuai dengan profil ini adalah penempatan maksimal 100% di produk tunai, atau maksimal 60% di produk pendapatan, atau maksimal 20% di produk berkembang.",
+      "description": "Anda lebih memprioritaskan perlindungan pokok investasi dengan fluktuasi rendah. Portofolio yang sesuai: Reksa Dana 60%, Obligasi 30%, Saham 10%.",
       "allocation": {
         "Saham": "10%",
         "Obligasi": "30%",
@@ -142,7 +142,7 @@
       "name": "Moderat",
       "min_score": 41,
       "max_score": 60,
-      "description": "Prioritas Anda  dalam investasi lebih kepada pertumbuhan nilai investasi yang lebih tinggi dan bersedia menerima risiko fluktuasi nilai investasi portofolio investasi  yang sesuai dengan profil ini adalah penempatan maksimal 80% di produk tunai, atau maksimal 100% di produk pendapatan, atau maksimal 50% di produk berkembang.",
+      "description": "Anda mengutamakan pertumbuhan nilai investasi dengan risiko terkendali. Portofolio yang sesuai: Reksa Dana 40%, Obligasi 30%, Saham 30%.",
       "allocation": {
         "Saham": "30%",
         "Obligasi": "30%",
@@ -153,7 +153,7 @@
       "name": "Agresif",
       "min_score": 61,
       "max_score": 80,
-      "description": "Tujuan investasi Anda memperoleh pertumbuhan yang tinggi dalam jangka panjang dan siap menerima fluktuasi yang tinggi atas nilai investasi Anda. Portofolio investasi yang sesuai dengan profil ini adalah penempatan maksimal 60% di produk tunai, atau maksimal 80% di produk pendapatan, atau maksimal 80% di produk berkembang.",
+      "description": "Anda bertujuan memperoleh pertumbuhan tinggi dan siap menerima fluktuasi tinggi. Portofolio yang sesuai: Saham 60%, Obligasi 15%, Reksa Dana 25%.",
       "allocation": {
         "Saham": "60%",
         "Obligasi": "15%",
@@ -164,7 +164,7 @@
       "name": "Sangat Agresif",
       "min_score": 81,
       "max_score": 100,
-      "description": "Tujuan investasi Anda adalah  memperoleh pertumbuhan yang sangat tinggi dalam jangka panjang dan siap menerima fluktuasi signifikan atas nilai investasi Anda. Portofolio investasi yang sesuai dengan profil ini adalah penempatan maksimal 40% di produk tunai, atau maksimal 80% di produk pendapatan, atau maksimal 100% di produk berkembang.",
+      "description": "Anda mengejar pertumbuhan sangat tinggi dan siap menerima fluktuasi signifikan. Portofolio yang sesuai: Saham 75%, Obligasi 10%, Reksa Dana 15%.",
       "allocation": {
         "Saham": "75%",
         "Obligasi": "10%",

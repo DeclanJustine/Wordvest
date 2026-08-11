@@ -3,14 +3,14 @@ Build-time script: Extract Kuesioner Profil Risiko from PDF → data/kuesioner.j
 Uses regex + rule-based parsing (NLP-lite), not LLM.
 """
 
-import re, json, os, sys
+import re, json, os
 from langchain_community.document_loaders import PyPDFLoader
 
 PDF_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "Kuesioner-Profil-Risiko.pdf")
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "kuesioner.json")
 
 
-def parse_kuesioner(text: str) -> dict:
+def parse_kuesioner(text):
     lines = [l.strip() for l in text.split("\n") if l.strip()]
 
     profiles = []
@@ -124,19 +124,18 @@ def parse_kuesioner(text: str) -> dict:
             p["description"] = desc.strip()
 
     # === Phase 4: Set pasar modal categories ===
-    remap_categories = {
+    categories = {
         "Saham": ["Saham"],
         "Obligasi": ["Obligasi Pemerintah", "Obligasi Korporasi"],
         "Reksa Dana": [
             "Reksa Dana Pasar Uang",
             "Reksa Dana Pendapatan Tetap",
             "Reksa Dana Campuran",
-            "Reksa Dana Saham",
-            "Reksa Dana Terproteksi",
+            "Reksa Dana Saham", 
         ],
     }
 
-    remap_alloc = {
+    alloc = {
         "Konservatif": {"Saham": "10%", "Obligasi": "30%", "Reksa Dana": "60%"},
         "Moderat": {"Saham": "30%", "Obligasi": "30%", "Reksa Dana": "40%"},
         "Agresif": {"Saham": "60%", "Obligasi": "15%", "Reksa Dana": "25%"},
@@ -144,12 +143,12 @@ def parse_kuesioner(text: str) -> dict:
     }
 
     for p in profiles:
-        p["allocation"] = remap_alloc.get(p["name"], {})
+        p["allocation"] = alloc.get(p["name"], {})
 
     return {
         "questions": questions,
         "profiles": profiles,
-        "product_categories": remap_categories,
+        "product_categories": categories,
     }
 
 

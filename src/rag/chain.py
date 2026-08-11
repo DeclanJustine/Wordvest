@@ -1,5 +1,4 @@
 from langchain_ollama import ChatOllama
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_classic.chains.history_aware_retriever import create_history_aware_retriever
 from langchain_classic.chains.retrieval import create_retrieval_chain
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
@@ -19,7 +18,7 @@ def get_llm():
     return ChatOllama(model=LLM_MODEL, temperature=0.0, max_tokens=250)
 
 
-def normalisasi(query: str) -> str:
+def normalisasi(query):
     q = query.lower()
     for k, v in NORMALISASI_INPUT.items():
         q = q.replace(k, v)
