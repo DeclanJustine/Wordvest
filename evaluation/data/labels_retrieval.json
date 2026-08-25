@@ -1,0 +1,122 @@
+[
+  {
+    "pertanyaan": "Apa itu saham?",
+    "halaman_relevan": [91]
+  },
+  {
+    "pertanyaan": "Apa itu obligasi?",
+    "halaman_relevan": [94, 97]
+  },
+  {
+    "pertanyaan": "Apa itu reksa dana?",
+    "halaman_relevan": [101, 256]
+  },
+  {
+    "pertanyaan": "Apa itu IHSG?",
+    "halaman_relevan": [227]
+  },
+  {
+    "pertanyaan": "Apa itu dividen?",
+    "halaman_relevan": [70, 73, 91]
+  },
+  {
+    "pertanyaan": "Apa itu right issue?",
+    "halaman_relevan": [183, 184, 225, 253]
+  },
+  {
+    "pertanyaan": "Apa itu waran?",
+    "halaman_relevan": [91, 253, 258]
+  },
+  {
+    "pertanyaan": "Apa itu IPO (Initial Public Offering)?",
+    "halaman_relevan": [9, 43, 45, 113, 115, 120, 178, 245, 255]
+  },
+  {
+    "pertanyaan": "Apa itu prospektus dalam IPO?",
+    "halaman_relevan": [28, 86, 113, 117, 141, 175, 176, 183, 184, 225, 256]
+  },
+  {
+    "pertanyaan": "Apa fungsi Bursa Efek Indonesia (BEI)?",
+    "halaman_relevan": [252]
+  },
+  {
+    "pertanyaan": "Apa itu KPEI dan apa fungsinya?",
+    "halaman_relevan": [31, 39, 206, 253]
+  },
+  {
+    "pertanyaan": "Apa itu KSEI dan apa fungsinya?",
+    "halaman_relevan": [31, 42, 57, 58, 138, 206, 250, 254]
+  },
+  {
+    "pertanyaan": "Apa itu kustodian?",
+    "halaman_relevan": [42, 43, 45, 48, 54, 109, 140, 141, 142, 242, 253]
+  },
+  {
+    "pertanyaan": "Apa itu manajer investasi?",
+    "halaman_relevan": [46, 109, 254]
+  },
+  {
+    "pertanyaan": "Apa itu wali amanat?",
+    "halaman_relevan": [47, 49, 55, 169, 250, 258]
+  },
+  {
+    "pertanyaan": "Apa itu penjamin emisi efek?",
+    "halaman_relevan": [45, 255]
+  },
+  {
+    "pertanyaan": "Apa itu T+2 dalam penyelesaian transaksi?",
+    "halaman_relevan": [33, 130, 131, 132]
+  },
+  {
+    "pertanyaan": "Apa itu fraksi harga saham?",
+    "halaman_relevan": [135]
+  },
+  {
+    "pertanyaan": "Apa itu analisis fundamental?",
+    "halaman_relevan": [15, 63, 83, 146, 147, 155, 263]
+  },
+  {
+    "pertanyaan": "Apa itu analisis teknikal?",
+    "halaman_relevan": [15, 82, 146, 155, 156, 157, 261]
+  },
+  {
+    "pertanyaan": "Siapa Warren Buffett dan apa strategi investasinya?",
+    "halaman_relevan": [16, 17, 20, 68, 122, 123, 124, 146]
+  },
+  {
+    "pertanyaan": "Apa itu value investing?",
+    "halaman_relevan": [68, 146]
+  },
+  {
+    "pertanyaan": "Apa itu peringkat obligasi?",
+    "halaman_relevan": [158, 159]
+  },
+  {
+    "pertanyaan": "Apa itu Sharpe Ratio?",
+    "halaman_relevan": [161, 162, 163, 262]
+  },
+  {
+    "pertanyaan": "Apa itu Treynor Ratio?",
+    "halaman_relevan": [161, 162, 163]
+  },
+  {
+    "pertanyaan": "Apa itu Jensen Alpha?",
+    "halaman_relevan": [15, 63, 160, 161, 162, 163]
+  },
+  {
+    "pertanyaan": "Apa isi UU Pasar Modal No. 8 Tahun 1995?",
+    "halaman_relevan": [34]
+  },
+  {
+    "pertanyaan": "Apa itu insider trading?",
+    "halaman_relevan": [27, 84, 188, 208, 218]
+  },
+  {
+    "pertanyaan": "Apa itu WPPE (Wakil Perantara Pedagang Efek)?",
+    "halaman_relevan": [54, 177, 242, 244, 245, 246, 248, 249, 255]
+  },
+  {
+    "pertanyaan": "Apa itu WAPERD (Wakil Agen Penjual Efek Reksa Dana)?",
+    "halaman_relevan": [54, 242, 244, 247, 248, 249]
+  }
+]

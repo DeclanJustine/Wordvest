@@ -1,0 +1,122 @@
+[
+  {
+    "pertanyaan": "Apa itu saham?",
+    "referensi": "Saham merupakan bukti penyertaan atau kepemilikan dalam suatu perusahaan yang dapat berbentuk warkat atau tanpa warkat. Pemegang saham berhak memperoleh dividen dan memiliki hak suara dalam RUPS."
+  },
+  {
+    "pertanyaan": "Apa itu obligasi?",
+    "referensi": "Obligasi merupakan efek berbasis surat utang yang memberikan hasil investasi bersifat tetap selama periode tertentu hingga jangka waktu jatuh temponya. Investor berhak menerima bunga secara berkala dan pengembalian pokok saat jatuh tempo."
+  },
+  {
+    "pertanyaan": "Apa itu reksa dana?",
+    "referensi": "Reksa Dana adalah wadah yang dipergunakan untuk menghimpun dana dari masyarakat pemodal untuk selanjutnya diinvestasikan dalam portofolio efek oleh Manajer Investasi. Reksa Dana merupakan produk pengelolaan investasi yang diawasi OJK."
+  },
+  {
+    "pertanyaan": "Apa itu IHSG?",
+    "referensi": "IHSG (Indeks Harga Saham Gabungan) adalah indeks utama yang menggambarkan kinerja pasar saham di Indonesia, mencerminkan pergerakan harga saham yang terdaftar di Bursa Efek Indonesia."
+  },
+  {
+    "pertanyaan": "Apa itu dividen?",
+    "referensi": "Dividen merupakan pembagian keuntungan yang diberikan perusahaan dan berasal dari keuntungan yang dihasilkan perusahaan. Dividen diberikan setelah mendapat persetujuan dari pemegang saham dalam RUPS dan dapat berupa dividen tunai atau dividen saham."
+  },
+  {
+    "pertanyaan": "Apa itu right issue?",
+    "referensi": "Hak Memesan Efek Terlebih Dahulu (HMETD) atau right issue adalah hak yang melekat pada saham yang memungkinkan pemegang saham yang ada untuk membeli efek baru sebelum ditawarkan kepada pihak lain. Emiten wajib memperoleh persetujuan RUPS sebelum menerbitkan HMETD."
+  },
+  {
+    "pertanyaan": "Apa itu waran?",
+    "referensi": "Waran adalah efek yang diterbitkan oleh suatu perusahaan yang memberi hak kepada pemegang efek untuk memesan saham dari perusahaan tersebut pada harga tertentu untuk 6 bulan atau lebih."
+  },
+  {
+    "pertanyaan": "Apa itu IPO (Initial Public Offering)?",
+    "referensi": "IPO (Initial Public Offering) adalah proses di mana perusahaan tertutup menjadi perusahaan terbuka dengan menawarkan dan menjual sebagian sahamnya kepada publik serta mencatatkan sahamnya di Bursa Efek Indonesia. Proses ini disebut go public."
+  },
+  {
+    "pertanyaan": "Apa itu prospektus dalam IPO?",
+    "referensi": "Prospektus adalah dokumen tertulis yang memuat seluruh informasi yang disampaikan kepada OJK sebagai bagian dari pernyataan pendaftaran. Dokumen ini berisi gambaran terkini kondisi Emiten dan menjadi bahan pertimbangan investasi bagi pemegang saham dan investor baru."
+  },
+  {
+    "pertanyaan": "Apa fungsi Bursa Efek Indonesia (BEI)?",
+    "referensi": "Fungsi BEI adalah memberikan layanan Jasa Transaksi Efek, Jasa Pencatatan, dan Jasa Informasi dan Fasilitas lainnya. BEI juga berperan sebagai Self Regulatory Organization (SRO) yang mengatur mekanisme pasar."
+  },
+  {
+    "pertanyaan": "Apa itu KPEI dan apa fungsinya?",
+    "referensi": "PT Kliring Penjaminan Efek Indonesia (KPEI) adalah lembaga yang diberikan kewenangan untuk mengatur pelaksanaan kegiatan pasar modal. Fungsi utamanya adalah menyediakan jasa kliring dan penjaminan penyelesaian transaksi bursa sebagai Central Counterparty (CCP)."
+  },
+  {
+    "pertanyaan": "Apa itu KSEI dan apa fungsinya?",
+    "referensi": "PT KSEI (Kustodian Sentral Efek Indonesia) adalah lembaga yang menyediakan jasa kustodian sentral dan penyelesaian transaksi efek. Fungsinya meliputi pengelolaan aset, jasa kustodian, serta penyelesaian transaksi efek secara teratur dan efisien."
+  },
+  {
+    "pertanyaan": "Apa itu kustodian?",
+    "referensi": "Kustodian adalah pihak yang memberikan jasa penitipan efek dan harta lain yang berkaitan dengan efek serta jasa lain, termasuk menerima dividen, bunga, menyelesaikan transaksi efek, dan mewakili pemegang rekening."
+  },
+  {
+    "pertanyaan": "Apa itu manajer investasi?",
+    "referensi": "Manajer Investasi (MI) adalah pihak yang kegiatan usahanya mengelola portofolio efek untuk para nasabah atau mengelola portofolio investasi kolektif untuk sekelompok nasabah. MI diberi wewenang penuh oleh nasabah untuk mengelola dana berdasarkan perjanjian."
+  },
+  {
+    "pertanyaan": "Apa itu wali amanat?",
+    "referensi": "Wali Amanat merupakan pihak yang mewakili kepentingan pemegang efek yang bersifat utang. Kegiatan Wali Amanat mencakup penyusunan kontrak perwaliamanatan, analisis kemampuan Emiten, pengawasan jaminan obligasi, dan penyampaian informasi kepada pemegang obligasi."
+  },
+  {
+    "pertanyaan": "Apa itu penjamin emisi efek?",
+    "referensi": "Penjamin Emisi Efek (underwriter) adalah pihak yang membuat kontrak dengan Emiten untuk melakukan Penawaran Umum bagi kepentingan Emiten dengan atau tanpa kewajiban untuk membeli sisa efek yang tidak terjual."
+  },
+  {
+    "pertanyaan": "Apa itu T+2 dalam penyelesaian transaksi?",
+    "referensi": "T+2 dalam penyelesaian transaksi berarti perpindahan aset dan pembayaran dilakukan maksimal 2 hari kerja setelah transaksi. Untuk pembelian, investor harus menyetor dana dalam jangka waktu tersebut; untuk penjualan, investor menerima pembayaran dalam jangka waktu yang sama."
+  },
+  {
+    "pertanyaan": "Apa itu fraksi harga saham?",
+    "referensi": "Fraksi harga saham adalah ukuran perubahan harga saham yang ditentukan berdasarkan rentang harga tertentu. Fraksi ini mengatur batas minimal perubahan harga saham dalam transaksi di bursa sesuai Peraturan BEI."
+  },
+  {
+    "pertanyaan": "Apa itu analisis fundamental?",
+    "referensi": "Analisis fundamental adalah pendekatan yang digunakan investor untuk mengevaluasi kondisi dasar perusahaan dan menentukan harga wajar perusahaan. Prinsipnya adalah membeli saham dengan fundamental yang baik pada harga wajar atau di bawah harga wajarnya menggunakan data laporan keuangan."
+  },
+  {
+    "pertanyaan": "Apa itu analisis teknikal?",
+    "referensi": "Analisis teknikal adalah metode untuk memprediksi harga saham di masa depan dengan menggunakan data historis seperti harga dan volume perdagangan. Prinsip dasarnya meliputi Price Discount Everything, Price Fluctuates in Trends, dan History Repeat Itself."
+  },
+  {
+    "pertanyaan": "Siapa Warren Buffett dan apa strategi investasinya?",
+    "referensi": "Warren Buffett adalah salah satu orang terkaya di dunia yang dikenal ahli dalam investasi. Strategi investasinya berfokus pada investasi jangka panjang dengan membeli saham perusahaan yang produknya ia kenal dan memiliki fundamental yang baik, menerapkan value investing dan Margin of Safety."
+  },
+  {
+    "pertanyaan": "Apa itu value investing?",
+    "referensi": "Value investing adalah pendekatan investasi di mana investor memilih saham yang memiliki fundamental yang baik dan berpotensi memberikan kenaikan tinggi dalam jangka panjang. Pendekatan ini fokus pada analisis fundamental untuk menilai nilai intrinsik perusahaan."
+  },
+  {
+    "pertanyaan": "Apa itu peringkat obligasi?",
+    "referensi": "Peringkat obligasi adalah suatu penilaian terstandar dari kemampuan suatu negara atau perusahaan dalam membayar utang-utangnya. Rating ini memungkinkan perbandingan kemampuan pembayaran antar perusahaan atau negara, dengan kategori idAAA hingga idD."
+  },
+  {
+    "pertanyaan": "Apa itu Sharpe Ratio?",
+    "referensi": "Sharpe Ratio adalah metode yang digunakan untuk mengukur kinerja portofolio dengan membandingkan premi risiko portofolio dengan risiko portofolio yang dinyatakan dalam standar deviasi. Rasio ini menunjukkan seberapa baik portofolio menghasilkan return tambahan per unit risiko."
+  },
+  {
+    "pertanyaan": "Apa itu Treynor Ratio?",
+    "referensi": "Treynor Ratio adalah metode yang mengukur kinerja portofolio dengan membandingkan premi risiko portofolio dengan risiko portofolio yang dinyatakan melalui beta (risiko sistematis). Indeks ini dirumuskan sebagai Tp_i = (Rp_i - Rf) / beta_i."
+  },
+  {
+    "pertanyaan": "Apa itu Jensen Alpha?",
+    "referensi": "Jensen Alpha adalah metode evaluasi kinerja portofolio yang didasarkan pada konsep garis pasar sekuritas (SML). Indeks ini mengukur selisih antara return aktual portofolio dengan return yang diharapkan berdasarkan risiko beta dan tingkat bunga bebas risiko."
+  },
+  {
+    "pertanyaan": "Apa isi UU Pasar Modal No. 8 Tahun 1995?",
+    "referensi": "UU Pasar Modal No. 8 Tahun 1995 merupakan peraturan dasar yang mengatur produk pasar modal di Indonesia. Isi UU ini mencakup definisi, pengertian, aturan mengenai aktivitas pasar modal, struktur pasar modal, peran lembaga penunjang, dan ketentuan hukum terkait pelanggaran."
+  },
+  {
+    "pertanyaan": "Apa itu insider trading?",
+    "referensi": "Insider trading adalah transaksi saham yang dilakukan oleh orang dalam perusahaan publik dengan menggunakan informasi yang mengandung fakta materiil yang dapat mempengaruhi harga saham, sedangkan informasi itu belum diumumkan kepada publik. Tindakan ini dilarang menurut UU Pasar Modal."
+  },
+  {
+    "pertanyaan": "Apa itu WPPE (Wakil Perantara Pedagang Efek)?",
+    "referensi": "WPPE adalah individu yang bekerja pada Perusahaan Efek dan berfungsi sebagai perantara yang menghubungkan Investor dengan sistem perdagangan di BEI. WPPE wajib memiliki izin dari OJK dan memiliki pengetahuan yang cukup tentang pasar modal."
+  },
+  {
+    "pertanyaan": "Apa itu WAPERD (Wakil Agen Penjual Efek Reksa Dana)?",
+    "referensi": "WAPERD adalah orang perseorangan yang mendapat izin dari OJK untuk bertindak sebagai penjual efek Reksa Dana. Untuk memperoleh izin, seseorang wajib memiliki sertifikat lulus ujian kecakapan WAPERD dan memenuhi syarat cakap hukum serta akhlak yang baik."
+  }
+]

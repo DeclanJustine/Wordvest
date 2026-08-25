@@ -1,0 +1,223 @@
+{
+ "summary": {
+  "n_skenario": 12,
+  "rewrite_on": {
+   "tidak_tersedia": 0,
+   "%tidak_tersedia": 0.0,
+   "answer_relevancy_mean": 0.867,
+   "conversational_relevancy_mean": 0.917
+  },
+  "rewrite_off": {
+   "tidak_tersedia": 2,
+   "%tidak_tersedia": 16.7,
+   "answer_relevancy_mean": 0.867,
+   "conversational_relevancy_mean": 0.558
+  }
+ },
+ "per_skenario": [
+  {
+   "id": 1,
+   "turn1": "Apa itu reksa dana?",
+   "turn2": "Bagaimana cara memilihnya yang baik?",
+   "rewrite_on": {
+    "jawaban": "Reksa Dana harus dipilih berdasarkan tujuan investasi, risiko yang mampu ditanggung, dan kinerja historis. Investor perlu lebih selektif memilih Reksa Dana saham karena kinerjanya secara rata-rata tidak lebih baik dibandingkan IHSG. Untuk memilih yang baik, pertimbangkan jenis Reksa Dana yang sesuai dengan jangka waktu investasi, seperti Reksa Dana obligasi untuk jangka 1-3 tahun atau Reksa Dana campuran untuk jangka 3-5 tahun. Selain itu, evaluasi kinerjanya menggunakan metode seperti Sharpe, Treynor, atau Jensen Alpha untuk memastikan keuntungan yang seimbang dengan risiko.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Cara memilih saham yang baik menurut Lo Kheng Hong adalah dengan mengikuti lima prinsip berikut:  \n1. **Lihat manajemen perusahaan** apakah dikelola oleh orang yang jujur, profesional, berintegritas, dan dikagumi.  \n2. **Perhatikan usaha perusahaan** dan prediksi bisnisnya di masa depan, dengan menganalisis kinerja jangka panjang (5-10 tahun ke belakang).  \n3. **Cari perusahaan dengan laba besar** melalui profit margin dan ROE.  \n4. **Pilih perusahaan yang terus bertumbuh** dalam jangka panjang.  \n5. **Cermati valuasi** dengan membandingkan PER (Price Earning Ratio) atau PBV (Price to Book Value) terhadap kompetitor, dan beli saham yang harganya murah, terutama saat kondisi krisis.  \n\nPrinsip ini mengacu pada pendekatan Warren Buffett, yaitu \"be greedy when the others are fearful\".",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.9,
+    "conversational_relevancy": 0.0
+   }
+  },
+  {
+   "id": 2,
+   "turn1": "Apa itu IPO (Initial Public Offering)?",
+   "turn2": "Siapa yang wajib menyediakan prospektusnya?",
+   "rewrite_on": {
+    "jawaban": "Emiten wajib menyediakan prospektus. Prospektus adalah dokumen tertulis yang memuat seluruh informasi dalam prospektus yang disampaikan kepada OJK sebagai bagian dari pernyataan pendaftaran, kecuali informasi mengenai nilai nominal, jumlah, dan harga penawaran Efek. Emiten juga wajib menerbitkan prospektus yang berisi gambaran terkini kondisi Emiten sebagai bahan pertimbangan investasi.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Emiten wajib menyediakan prospektusnya. Hal ini diatur dalam Peraturan OJK Nomor 14/POJK.04/2019 tentang Perubahan atas Peraturan Otoritas Jasa Keuangan Nomor 32/POJK.04/2015 tentang Penambahan Modal Perusahaan Terbuka dengan Memberikan Hak Memesan Efek Terlebih Dahulu. Emiten menerbitkan prospektus yang berisi gambaran terkini kondisi Emiten.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   }
+  },
+  {
+   "id": 3,
+   "turn1": "Jelaskan analisis fundamental dalam saham.",
+   "turn2": "Apa perbedaannya dengan analisis teknikal?",
+   "rewrite_on": {
+    "jawaban": "Analisis fundamental dan analisis teknikal memiliki pendekatan yang berbeda dalam mengevaluasi saham. Analisis fundamental berfokus pada kondisi keuangan perusahaan, seperti rasio likuiditas, aktivitas, utang, laba, dan nilai pasar, untuk menentukan harga wajar saham. Investor menggunakan data akuntansi dan informasi publik untuk mengidentifikasi saham yang \"salah harga\" (mispriced) dan membelinya pada harga yang wajar atau di bawah nilai intrinsiknya.  \n\nSementara itu, analisis teknikal berdasarkan pada pergerakan harga saham dan pola historis, seperti grafik dan indikator teknis, untuk memprediksi arah harga di masa depan. Prinsip utamanya adalah \"Price Discount Everything\" dan \"History Repeat Itself\", di mana harga saham dianggap mencerminkan tren dan pola yang berulang. Pendekatan ini lebih cocok untuk investor yang ingin memanfaatkan momentum pasar dalam jangka pendek.  \n\nPerbedaan inti terletak pada sumber data (keuangan vs. harga saham) dan tujuan (mencari nilai intrinsik vs. memprediksi tren harga).",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Analisis teknikal berbeda dengan analisis fundamental dalam pendekatan dan sumber data yang digunakan. Analisis teknikal berfokus pada pergerakan harga saham dan pola-pola grafik historis untuk memprediksi arah harga di masa depan, sementara analisis fundamental mengevaluasi nilai intrinsik perusahaan melalui laporan keuangan, kondisi bisnis, dan faktor eksternal. Selain itu, analisis teknikal lebih sering digunakan oleh investor yang ingin memanfaatkan momentum perubahan harga pasar dalam jangka pendek, sedangkan analisis fundamental cocok untuk investor jangka panjang yang mengejar nilai saham yang baik.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   }
+  },
+  {
+   "id": 4,
+   "turn1": "Apa itu saham?",
+   "turn2": "Bagaimana cara mendapatkannya?",
+   "rewrite_on": {
+    "jawaban": "Cara mendapatkan saham dilakukan melalui proses transaksi jual/beli yang melibatkan pialang (broker). Investor mengisi formulir pemesanan saham, melakukan setoran dana ke Rekening Dana Nasabah (RDN), dan menyerahkan dokumen identitas serta bukti setoran. Setelah itu, perusahaan efek akan mengirimkan formulir pemesanan ke penjamin emisi untuk dilanjutkan ke Biro Administrasi Efek. \n\nSelain itu, saham dapat diperoleh melalui pasar perdana (IPO) atau pasar sekunder. Dalam pasar perdana, calon investor membeli saham langsung dari emiten, sedangkan di pasar sekunder, saham diperdagangkan antar investor setelah tercatat di Bursa Efek Indonesia (BEI).",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.9,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Maaf, informasi tidak tersedia pada referensi",
+    "tidak_tersedia": true,
+    "answer_relevancy": 0.5,
+    "conversational_relevancy": 0.0
+   }
+  },
+  {
+   "id": 5,
+   "turn1": "Apa itu obligasi?",
+   "turn2": "Bagaimana cara menghitung imbalannya?",
+   "rewrite_on": {
+    "jawaban": "Cara menghitung imbal hasil obligasi meliputi dua metode utama: **current yield** dan **yield to maturity (YTM)**.  \n\n1. **Current Yield** dihitung dengan rumus:  \n   **Current Yield = (Bunga Tahunan / Harga Obligasi) × 100%**  \n   Contoh: Jika obligasi memiliki kupon 17% dan dibeli dengan harga 98% dari nilai nominal, maka:  \n   Current Yield = (17% / 98%) × 100% = 17,34%.  \n\n2. **Yield to Maturity (YTM)** dihitung menggunakan pendekatan nilai YTM dengan rumus:  \n   **YTM Approximation = [(R + P) / 2] / [(R - P) / n] × 100%**  \n   Contoh: Obligasi dibeli dengan harga 94,25% (R = 94,25%), kupon 8% (C = 8%), jatuh tempo dalam 5 tahun (n = 5), dan nilai nominal 100% (P = 100%).  \n   YTM Approximation = [(94,25 + 100)/2] / [(100 - 94,25)/5] × 100% = 9,42%.  \n\nKedua metode ini mengukur tingkat pengembalian investor berdasarkan harga obligasi dan kondisi pembayaran kupon.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.7,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Cara menghitung imbal hasil (yield) terdiri dari dua metode utama: **Current Yield** dan **Yield to Maturity (YTM)**.  \n1. **Current Yield** dihitung dengan membagi bunga tahunan (kupon) dengan harga obligasi:  \n   *Current Yield = Bunga Tahunan / Harga Obligasi*  \n   Contoh: Jika obligasi memberikan kupon 17% (Rp170.000.000.00) dan harga obligasi Rp980.000.000.00, maka Current Yield = 17% / 98% ≈ 17,34%.  \n\n2. **YTM Approximation** menggunakan rumus:  \n   *YTM ≈ [C + (R - P)/n] / [(R + P)/2] × 100%*  \n   Dimana:  \n   - C = Kupon tahunan  \n   - R = Nilai nominal (redemption value)  \n   - P = Harga pembelian (purchase value)  \n   - n = Jumlah periode hingga jatuh tempo  \n\nSelain itu, **expected return** dihitung dengan mengalikan probabilitas return dengan tingkat return masing-masing. Contoh: 75% kemungkinan return 12% dan 25% kemungkinan return -10%, maka expected return = 0,75×12% + 0,25×(-10%) = 6,5%.  \n\nHarga obligasi juga bisa dihitung berdasarkan kondisi:  \n- **At par**: Harga = 100% × nilai nominal  \n- **At premium**: Harga > 100% × nilai nominal  \n- **At discount**: Harga < 100% × nilai nominal",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.95,
+    "conversational_relevancy": 1.0
+   }
+  },
+  {
+   "id": 6,
+   "turn1": "Apa itu WPPE?",
+   "turn2": "Bagaimana cara mendapatkannya?",
+   "rewrite_on": {
+    "jawaban": "Untuk memperoleh izin WPPE, pemohon wajib lulus ujian keahlian di bidang WPPE dan WPEE yang diselenggarakan oleh Lembaga Sertifikasi Profesi terdaftar di OJK. Selanjutnya, pemohon harus mengajukan permohonan melalui sistem elektronik Sipo.OJK.go.id, melengkapi dokumen yang ditentukan, dan membayar biaya perizinan. Jika dokumen belum lengkap, OJK akan memberikan waktu maksimal 21 hari kerja untuk diperbaiki. Izin WPPE berlaku selama 3 tahun dan dapat diperpanjang.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.95,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Maaf, informasi tidak tersedia pada referensi",
+    "tidak_tersedia": true,
+    "answer_relevancy": 0.5,
+    "conversational_relevancy": 0.0
+   }
+  },
+  {
+   "id": 7,
+   "turn1": "Apa fungsi KSEI?",
+   "turn2": "Apa bedanya dengan KPEI?",
+   "rewrite_on": {
+    "jawaban": "Fungsi PT KSEI adalah sebagai **kustodian** (penyimpanan dan penyelesaian transaksi Efek), sedangkan PT KPEI berfungsi sebagai **lembaga kliring dan penjaminan** atas penyelesaian transaksi Efek di BEI. Keduanya merupakan bagian dari SRO (Self Regulatory Organization) yang sama, tetapi memiliki peran berbeda: KSEI mengelola aset dan layanan penyimpanan, sementara KPEI fokus pada kliring dan penjaminan transaksi.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.95,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "PT KPEI (Kliring Penjaminan Efek Indonesia) dan BEI (Bursa Efek Indonesia) memiliki peran berbeda dalam pasar modal. PT KPEI berfungsi sebagai **Central Counterparty (CCP)** yang menyediakan jasa kliring dan penjaminan penyelesaian transaksi bursa, serta berperan sebagai **Self Regulatory Organization (SRO)** dalam mengatur pelaksanaan kegiatan pasar modal. Sementara itu, BEI adalah **lembaga penyelenggara bursa efek** yang bertugas mengelola transaksi saham, obligasi, dan instrumen pasar modal lainnya. KPEI juga menjadi salah satu pemegang saham BEI, menunjukkan hubungan keterkaitan antara keduanya dalam sistem pasar modal Indonesia.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 0.0
+   }
+  },
+  {
+   "id": 8,
+   "turn1": "Apa itu IHSG?",
+   "turn2": "Bagaimana kinerja jangka panjangnya?",
+   "rewrite_on": {
+    "jawaban": "IHSG mengalami kenaikan sebesar **795.29%** selama periode **2004-2018** meski menghadapi berbagai krisis, baik dari dalam maupun luar negeri. Tingkat return tahunan rata-rata (annualized return) mencapai **15.73%** selama periode tersebut. Meski ada tahun dengan penurunan nilai (misalnya, -53.57% pada 2008 dan -14.54% pada 2015), kinerja jangka panjang IHSG tetap menarik karena mampu memberikan pertumbuhan signifikan seiring waktu.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.95,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Kinerja jangka panjang pasar modal, seperti IHSG, menunjukkan pertumbuhan signifikan. Dalam periode 2004-2018, IHSG mengalami kenaikan sebesar 795.29% atau annualized return 15.73% per tahun. Selain itu, Reksa Dana juga menunjukkan kinerja beragam tergantung jenisnya: Reksa Dana Obligasi cocok untuk jangka 1-3 tahun, Reksa Dana Campuran untuk 3-5 tahun, dan Reksa Dana Saham untuk jangka lebih panjang. Investor jangka panjang cenderung mendapatkan keuntungan meski menghadapi risiko fluktuasi pasar.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.9,
+    "conversational_relevancy": 0.7
+   }
+  },
+  {
+   "id": 9,
+   "turn1": "Apa itu insider trading?",
+   "turn2": "Apa sanksinya bagi pelaku?",
+   "rewrite_on": {
+    "jawaban": "Sanksi bagi pelaku perdagangan orang dalam meliputi pidana penjara paling lama 10 tahun dan denda paling banyak Rp15.000.000.000,00 (sesuai Pasal 104 UU Pasar Modal), serta sanksi administratif berupa denda yang bervariasi, dengan total denda mencapai Rp2.800.000.000,00. Pelaku yang didenda terendah sebesar Rp9.000.000,00, sementara ada pelaku yang didenda Rp2.300.000.000,00. Sanksi administratif diterapkan oleh Bapepam-LK sebagai tindak lanjut pemeriksaan terhadap pelanggaran.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.0,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Sanksi yang dikenakan kepada pelaku adalah denda administratif. Bapepam-LK tidak melanjutkan penanganan kasus ke tingkat penyidikan dan hanya menjatuhkan sanksi berupa denda. Besaran denda yang dikenakan terhadap para pelaku meliputi:  \n1. Sdr. AA: Rp30.000.000,00  \n2. Sdr. B: Rp53.000.000,00  \n3. Sdr. C: Rp2.330.000.000,00  \n4. Sdr. D: Rp25.000.000,00  \n5. Sdr. E: Rp76.000.000,00  \n6. Sdr. F: Rp154.000.000,00  \n7. Sdr. G: Rp9.000.000,00  \n8. Sdr. H: Rp184.000.000,00  \n9. Sdr. I: Rp317.000.000,00  \n\nSelain denda, pelaku juga dapat menghadapi ancaman pidana penjara paling lama 10 tahun dan denda paling banyak Rp15.000.000.000,00 sesuai pasal 104 UU Pasar Modal, tetapi dalam kasus ini, Bapepam-LK memilih sanksi administratif.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   }
+  },
+  {
+   "id": 10,
+   "turn1": "Apa itu pasar perdana?",
+   "turn2": "Apa bedanya dengan pasar sekunder?",
+   "rewrite_on": {
+    "jawaban": "Pasar perdana adalah transaksi surat berharga (saham dan obligasi) yang dilakukan saat investor membeli saham atau obligasi pada saat dilakukan IPO (Initial Public Offering) pertama kali. Dana investasi langsung masuk ke Emiten dan digunakan untuk kepentingan ekspansi perusahaan.  \n\nPasar sekunder adalah transaksi yang terjadi antara investor satu dengan investor lain, tanpa melibatkan Emiten. Transaksi saham dilakukan melalui fasilitas bursa (BEI), sementara obligasi diperdagangkan Over The Counter (OTC). Harga saham di pasar sekunder mencerminkan kinerja fundamental perusahaan, dan dana jual beli tidak lagi masuk ke Emiten.  \n\nPerbedaan utama terletak pada keterlibatan Emiten (ada di pasar perdana, tidak ada di pasar sekunder) dan tempat transaksi (bursa untuk saham, OTC untuk obligasi).",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 0.0
+   },
+   "rewrite_off": {
+    "jawaban": "Pasar sekunder adalah pasar di mana transaksi pembelian dan penjualan saham atau obligasi dilakukan antar investor, bukan antara investor dengan perusahaan emiten. Dalam pasar sekunder, dana jual beli tidak masuk ke perusahaan yang mengeluarkan efek, melainkan berpindah tangan dari investor ke investor lain. Harga saham di pasar sekunder mencerminkan kinerja fundamental perusahaan. Transaksi pada pasar sekunder dilakukan melalui bursa dengan perantaraan perusahaan efek, sementara pasar perdana melibatkan transaksi saat emiten melakukan IPO dan dana langsung masuk ke perusahaan.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.95,
+    "conversational_relevancy": 1.0
+   }
+  },
+  {
+   "id": 11,
+   "turn1": "Apa itu right issue?",
+   "turn2": "Siapa yang berhak membeli HMETD-nya?",
+   "rewrite_on": {
+    "jawaban": "Hak Memesan Efek Terlebih Dahulu (HMETD) berhak dimiliki oleh **pemegang saham yang ada**. Hak ini memungkinkan mereka membeli efek baru (seperti saham, efek konversi, atau waran) sebelum ditawarkan kepada pihak lain. Pemegang saham tersebut wajib mendapatkan persetujuan RUPS sebelum Emiten mengajukan rencana penambahan modal melalui HMETD.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 1.0,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Pemegang saham yang ada berhak membeli HMETD. Hak Memesan Efek Terlebih Dahulu (HMETD) melekat pada saham yang dimiliki pemegang saham saat ini, memungkinkan mereka untuk membeli efek baru sebelum ditawarkan kepada pihak lain.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.9,
+    "conversational_relevancy": 1.0
+   }
+  },
+  {
+   "id": 12,
+   "turn1": "Apa itu CAPM?",
+   "turn2": "Siapa yang mengembangkannya?",
+   "rewrite_on": {
+    "jawaban": "CAPM dikembangkan oleh Sharpe (1964) berdasarkan model Markowitz.",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.95,
+    "conversational_relevancy": 1.0
+   },
+   "rewrite_off": {
+    "jawaban": "Teori portofolio yang dikemukakan Markowitz (1952) dikenal dengan model Markowitz, memberikan suatu cara bagaimana berinvestasi dengan efisien dan optimal, yaitu dengan membentuk portofolio optimal. Sharpe (1966) mengembangkan model yang disebut dengan model indeks tunggal. \n\nJawaban:  \nSharpe (1966) mengembangkan model indeks tunggal (Single Index Model).",
+    "tidak_tersedia": false,
+    "answer_relevancy": 0.8,
+    "conversational_relevancy": 0.0
+   }
+  }
+ ]
+}

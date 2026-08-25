@@ -1,0 +1,27 @@
+{
+ "n_sampel": 30,
+ "konfigurasi": "k=10, seed=42, qwen3:8b (judge=generator), bge-m3",
+ "metrik": {
+  "answer_relevancy": {
+   "mean": 0.927,
+   "min": 0.6,
+   "n": 30
+  },
+  "faithfulness": {
+   "mean": 0.987,
+   "min": 0.8,
+   "n": 30
+  },
+  "context_recall": {
+   "mean": 0.794,
+   "min": 0.38,
+   "n": 30
+  },
+  "context_precision": {
+   "mean": 0.715,
+   "min": 0.17,
+   "n": 30
+  }
+ },
+ "catatan": "answer_relevancy & faithfulness = LLM-judge. context_recall = objektif vs halaman buku. context_precision = gaya RAGAS (rank-aware, halaman unik). Factual correctness via mode faktual."
+}

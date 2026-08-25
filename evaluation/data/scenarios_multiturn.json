@@ -1,0 +1,14 @@
+[
+  {"id": 1, "turn1": "Apa itu reksa dana?", "turn2": "Bagaimana cara memilihnya yang baik?"},
+  {"id": 2, "turn1": "Apa itu IPO (Initial Public Offering)?", "turn2": "Siapa yang wajib menyediakan prospektusnya?"},
+  {"id": 3, "turn1": "Jelaskan analisis fundamental dalam saham.", "turn2": "Apa perbedaannya dengan analisis teknikal?"},
+  {"id": 4, "turn1": "Apa itu saham?", "turn2": "Bagaimana cara mendapatkannya?"},
+  {"id": 5, "turn1": "Apa itu obligasi?", "turn2": "Bagaimana cara menghitung imbalannya?"},
+  {"id": 6, "turn1": "Apa itu WPPE?", "turn2": "Bagaimana cara mendapatkannya?"},
+  {"id": 7, "turn1": "Apa fungsi KSEI?", "turn2": "Apa bedanya dengan KPEI?"},
+  {"id": 8, "turn1": "Apa itu IHSG?", "turn2": "Bagaimana kinerja jangka panjangnya?"},
+  {"id": 9, "turn1": "Apa itu insider trading?", "turn2": "Apa sanksinya bagi pelaku?"},
+  {"id": 10, "turn1": "Apa itu pasar perdana?", "turn2": "Apa bedanya dengan pasar sekunder?"},
+  {"id": 11, "turn1": "Apa itu right issue?", "turn2": "Siapa yang berhak membeli HMETD-nya?"},
+  {"id": 12, "turn1": "Apa itu CAPM?", "turn2": "Siapa yang mengembangkannya?"}
+]

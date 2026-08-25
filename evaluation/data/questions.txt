@@ -1,0 +1,225 @@
+Daftar Pertanyaan - AI Assistant Edukasi Pasar Modal
+====================================================
+Berdasarkan Buku 3 - Pasar Modal (OJK, Seri Literasi Keuangan, 2019)
+~154 pertanyaan, 11 kategori
+
+======================================================================
+BAB 1: PENDAHULUAN — SEJARAH PASAR MODAL
+======================================================================
+Apa itu pasar modal?
+Kapan pasar modal pertama kali didirikan di dunia?
+Apa sejarah berdirinya Bursa Efek Indonesia?
+Kapan bursa efek pertama kali didirikan di Batavia?
+Bagaimana perkembangan pasar modal Indonesia dari tahun ke tahun?
+Apa penyebab ditutupnya bursa efek di Indonesia pada tahun 1914-1918?
+Kapan pertama kali UU Darurat tentang bursa dikeluarkan di Indonesia?
+Apa itu Pakto 88 dan Pakdes 88?
+Kapan pengawasan pasar modal beralih dari Bapepam ke OJK?
+Apa itu T+2 Settlement dan kapan diluncurkan di Indonesia?
+Bagaimana sejarah pasar modal dunia?
+Kapan VOC didirikan dan apa hubungannya dengan pasar modal?
+Kapan bursa saham pertama di dunia didirikan?
+
+======================================================================
+BAB 1: PELAKU PASAR MODAL
+======================================================================
+Siapa saja pelaku pasar modal Indonesia?
+Apa itu Self Regulatory Organization (SRO) dalam pasar modal?
+Apa fungsi Bursa Efek Indonesia (BEI)?
+Apa itu KPEI dan apa fungsinya?
+Apa itu KSEI dan apa fungsinya?
+Apa peran OJK di pasar modal?
+Siapa saja yang termasuk perusahaan efek?
+Apa itu emiten?
+Siapa saja yang bisa menjadi investor di pasar modal?
+Apa saja profesi penunjang di pasar modal?
+Apa itu IOSCO dan apa keanggotaan Indonesia di dalamnya?
+
+======================================================================
+BAB 1: TEORI PORTOFOLIO
+======================================================================
+Apa itu Time Value of Money?
+Jelaskan Teori Portofolio Markowitz?
+Apa itu Capital Asset Pricing Model (CAPM)?
+Siapa yang mengembangkan CAPM?
+Apa itu Teori Efisiensi Pasar?
+Jelaskan tiga bentuk efisiensi pasar (weak, semi-strong, strong)?
+Apa itu Margin of Safety?
+Apa itu Dividend Discount Model?
+Apa itu Asymmetric Information?
+Apa saja jenis risiko investasi?
+Apa itu market risk?
+Apa itu credit risk?
+Apa itu liquidity risk?
+Apa itu currency risk?
+Apa itu risiko regulasi atau politik dalam investasi?
+Bagaimana cara mengevaluasi kinerja reksa dana?
+Apa itu Sharpe Ratio?
+Apa itu Treynor Ratio?
+Apa itu Jensen Alpha?
+
+======================================================================
+BAB 2: PRODUK PASAR MODAL
+======================================================================
+Apa saja produk pasar modal?
+Bagaimana klasifikasi investasi di pasar modal?
+Apa itu investasi langsung dan tidak langsung?
+Apa itu saham?
+Apa itu obligasi?
+Apa itu derivatif?
+Apa itu Kontrak Opsi Saham?
+Apa itu Kontrak Berjangka Efek Indeks?
+Apa itu reksa dana?
+Apa itu reksa dana konvensional?
+Apa itu reksa dana syariah?
+Apa saja jenis-jenis reksa dana?
+Apa itu reksa dana pasar uang?
+Apa itu reksa dana pendapatan tetap?
+Apa itu reksa dana campuran?
+Apa itu reksa dana saham?
+Apa itu reksa dana terproteksi?
+Apa perbedaan reksa dana konvensional dan syariah?
+Siapa Mark Zuckerberg dan apa hubungannya dengan pasar modal?
+Bagaimana Mark Zuckerberg menjadi kaya dari IPO?
+
+======================================================================
+BAB 2: IPO DAN GO PUBLIC
+======================================================================
+Apa itu IPO (Initial Public Offering)?
+Bagaimana proses go public di pasar modal?
+Apa syarat perusahaan melakukan IPO?
+Apa keuntungan perusahaan go public?
+Apa itu prospektus dalam IPO?
+Bagaimana cara menentukan harga saham IPO?
+Berapa lama proses IPO?
+
+======================================================================
+BAB 2: MEKANISME TRANSAKSI
+======================================================================
+Bagaimana mekanisme transaksi saham dan obligasi?
+Apa perbedaan pasar perdana dan pasar sekunder?
+Bagaimana cara membeli saham di pasar sekunder?
+Berapa jadwal transaksi perdagangan di BEI?
+Jam berapa pasar modal Indonesia buka?
+Apa itu fraksi harga saham?
+Bagaimana perhitungan fraksi harga?
+Apa itu T+2 dalam penyelesaian transaksi?
+Bagaimana cara transaksi reksa dana?
+Apa beda transaksi reksa dana dan saham?
+Tips sukses investasi saham di pasar modal?
+Strategi investasi untuk generasi milenial?
+
+======================================================================
+BAB 3: ANALISIS SAHAM
+======================================================================
+Bagaimana cara menganalisis saham?
+Apa itu analisis fundamental?
+Apa itu analisis teknikal?
+Apa perbedaan analisis fundamental dan teknikal?
+Bagaimana cara menentukan harga wajar saham?
+Indikator apa saja yang digunakan dalam analisis teknikal?
+Siapa Warren Buffett dan apa strategi investasinya?
+Apa itu value investing?
+
+======================================================================
+BAB 3: ANALISIS OBLIGASI
+======================================================================
+Bagaimana cara menganalisis obligasi?
+Apa itu peringkat obligasi?
+Siapa PEFINDO dan apa fungsinya?
+Apa saja kategori rating obligasi?
+Bagaimana cara menghitung yield obligasi?
+
+======================================================================
+BAB 3: EVALUASI REKSA DANA
+======================================================================
+Bagaimana cara menghitung Sharpe Ratio?
+Bagaimana cara menghitung Treynor Ratio?
+Bagaimana cara menghitung Jensen Alpha?
+Apa itu risk free rate dalam perhitungan reksa dana?
+Apa itu IHSG dan bagaimana kinerja jangka panjangnya?
+Bagaimana kinerja reksa dana jangka panjang di Indonesia?
+
+======================================================================
+BAB 4: PERATURAN DAN PENGAWASAN
+======================================================================
+Apa saja peraturan pasar modal di Indonesia?
+Apa isi UU Pasar Modal No. 8 Tahun 1995?
+Bagaimana pengawasan pasar modal dilakukan?
+Apa itu market conduct dalam pasar modal?
+Apa itu disclosure dalam pasar modal?
+Bagaimana pengawasan transaksi efek dilakukan?
+Apa itu persyaratan permodalan di pasar modal?
+Bagaimana proses pemeriksaan pasar modal?
+Apa itu insider trading?
+Bagaimana studi kasus insider trading di Indonesia?
+Contoh kasus ketidakterbukaan informasi di pasar modal?
+Sanksi apa yang diberikan untuk pelanggaran pasar modal?
+
+======================================================================
+BAB 4: STATISTIK PASAR MODAL
+======================================================================
+Berapa pertumbuhan emiten baru di Indonesia?
+Bagaimana perkembangan nilai emisi dari tahun ke tahun?
+Berapa ringkasan data transaksi efek tahun 2017-2018?
+Bagaimana pergerakan IHSG dari tahun 2014-2018?
+Bagaimana rekapitulasi perdagangan saham berdasarkan jenis pasar?
+
+======================================================================
+BAB 5: PROFESI DAN KARIR
+======================================================================
+Apa saja profesi di pasar modal?
+Bagaimana cara menjadi WPPE?
+Apa itu WPPE (Wakil Perantara Pedagang Efek)?
+Apa itu WAPERD (Wakil Agen Penjual Efek Reksa Dana)?
+Bagaimana cara mendapatkan sertifikasi profesi pasar modal?
+Peluang karir apa saja di pasar modal?
+Bagaimana cara memulai karir di pasar modal?
+Apa saja pendidikan dan pelatihan profesi di pasar modal?
+Bagaimana cara menjadi pialang saham?
+Apa perbedaan WPPE dan WAPERD?
+
+======================================================================
+PERTANYAAN GLOSARIUM / ISTILAH
+======================================================================
+Apa itu IHSG?
+Apa itu dividen?
+Apa itu capital gain?
+Apa itu saham syariah?
+Apa itu obligasi negara?
+Apa itu sukuk?
+Apa itu IDX?
+Apa itu right issue?
+Apa itu waran?
+Apa itu obligasi konversi?
+Apa itu wali amanat?
+Apa itu penjamin emisi efek?
+Apa itu biro administrasi efek?
+Apa itu kustodian?
+Apa itu manajer investasi?
+Apa itu penasihat investasi?
+Apa itu kliring dan netting di pasar modal?
+Apa itu kontrak investasi kolektif (KIK)?
+Apa itu efek beragun aset?
+Apa itu perusahaan publik?
+Apa itu perantara pedagang efek?
+Apa itu prinsip keterbukaan?
+Apa itu anggota bursa efek?
+Apa itu order driven market?
+Apa itu scriptless trading?
+Apa itu JATS-Next G?
+Apa itu continuous auction system?
+Apa itu warkat dan saham tanpa warkat?
+Istilah-istilah dalam pasar modal?
+Kamus istilah pasar modal?
+
+======================================================================
+PERTANYAAN LINTAS TOPIK
+======================================================================
+Apa perbedaan saham dan obligasi?
+Saham atau obligasi, mana yang lebih menguntungkan?
+Investasi mana yang lebih aman, saham atau reksa dana?
+Apakah pasar modal syariah berbeda dengan konvensional?
+Bagaimana cara memulai investasi di pasar modal untuk pemula?
+Apakah pasar modal halal?
+Apa risiko berinvestasi di pasar modal?
