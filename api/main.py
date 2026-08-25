@@ -56,14 +56,8 @@ def chat(req: ChatRequest):
     )
 
     answer = result["answer"]
-    contexts = result.get("context", [])
 
-    sources = [
-        {"content": doc.page_content[:300], "source": doc.metadata.get("source", "Unknown")}
-        for doc in contexts
-    ]
-
-    return {"answer": answer, "sources": sources}
+    return {"answer": answer}
 
 
 @app.post("/api/reset")
