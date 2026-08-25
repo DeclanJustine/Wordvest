@@ -11,11 +11,18 @@ from src.rag.history import get_session_history
 
 NORMALISASI_INPUT = {
     "reksadana": "reksa dana",
+    "right issue": "hak memesan efek terlebih dahulu hmetd",
+    "rights issue": "hak memesan efek terlebih dahulu hmetd",
+    "idx": "bursa efek indonesia",
+    "pendidikan dan pelatihan profesi": "perizinan dan sertifikasi profesi",
+    "menjadi pialang": "profesi pialang broker izin wppe",
+    "menentukan harga saham ipo": "cara menghitung harga wajar saham",
+    "pasar modal halal": "pasar modal halal syariah",
 }
 
 
 def get_llm():
-    return ChatOllama(model=LLM_MODEL, temperature=0.0, max_tokens=250)
+    return ChatOllama(model=LLM_MODEL, temperature=0.0, max_tokens=250, seed=42)
 
 
 def normalisasi(query):
