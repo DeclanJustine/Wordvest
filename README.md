@@ -91,6 +91,14 @@ npm run dev
 │   └── kuesioner/
 │       ├── data.py          # Load data kuesioner
 │       └── extract.py       # Ekstrak PDF kuesioner
+├── evaluation/              # Evaluasi sistem (metrik RAGAS + retrieval + rewrite)
+│   ├── test_batch.py        # Uji batch 165 pertanyaan (MISS detection)
+│   ├── judge_prompts.py     # Prompt LLM-judge (qwen3:8b)
+│   ├── evaluate_quality.py  # Answer relevancy, faithfulness, context recall/precision
+│   ├── factual_scoring.py   # Scoring manual factual correctness (sampel 45)
+│   ├── eval_retrieval_recall.py  # Recall@k & MRR retrieval
+│   ├── eval_ablation_rewrite.py  # Ablation rewrite ON vs OFF (multi-turn)
+│   └── data/                # questions, hasil batch, label, skenario, output
 ├── frontend/                # Next.js web UI
 ├── data/
 │   ├── raw/                 # PDF sumber
