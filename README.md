@@ -1,4 +1,4 @@
-# AI Assistant Edukasi Pasar Modal
+# Wordvest - AI Assistant Edukasi Pasar Modal
 
 Asisten berbasis **Retrieval-Augmented Generation (RAG)** untuk menjawab pertanyaan seputar Pasar Modal Indonesia, menggunakan PDF di `data/raw/` sebagai sumber pengetahuan (utamanya buku **"Buku 3 - Pasar Modal"**).
 
