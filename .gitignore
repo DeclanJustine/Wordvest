@@ -1,5 +1,8 @@
 chroma_db/
 data/scraped/
+data/chunks_dump.txt
+evaluation/data/index_sweep/
+evaluation/data/smoke_batch.jsonl
 __pycache__/
 *.pyc
 .env

@@ -1,14 +1,14 @@
 # AI Assistant Edukasi Pasar Modal
 
-Asisten berbasis **Retrieval-Augmented Generation (RAG)** untuk menjawab pertanyaan seputar Pasar Modal Indonesia, menggunakan buku **"Buku 3 - Pasar Modal"** sebagai sumber pengetahuan.
+Asisten berbasis **Retrieval-Augmented Generation (RAG)** untuk menjawab pertanyaan seputar Pasar Modal Indonesia, menggunakan PDF di `data/raw/` sebagai sumber pengetahuan (utamanya buku **"Buku 3 - Pasar Modal"**).
 
 ### Fitur
 
-- Tanya jawab interaktif via **Streamlit** (Web UI) atau **CLI**
+- Tanya jawab interaktif via **Web UI (Next.js + FastAPI)** atau **CLI**
 - History-aware: bisa menanyakan follow-up tanpa kehilangan konteks
-- Verifikasi jawaban otomatis (post-generation hallucination check)
+- Prompt strict anti-halusinasi (hanya jawab dari konteks, fallback `"Maaf, informasi tidak tersedia pada referensi"`)
 - Normalisasi input Bahasa Indonesia (ejaan baku/tidak baku, misal "reksadana" → "reksa dana")
-- Sumber tunggal: 1 PDF (268 halaman, 1073 chunk setelah diproses)
+- Sumber: 2 PDF di `data/raw/` (`Buku 3 - Pasar Modal.pdf` 268 halaman + `Kuesioner-Profil-Risiko.pdf`), keduanya di-chunk dan diindeks ke ChromaDB (cek jumlah aktual via `python scripts/cek_chunk.py`)
 
 ### Prasyarat
 
@@ -37,13 +37,14 @@ pip install -r requirements.txt
 ```bash
 docker run -d --name ollama -p 11434:11434 ollama/ollama
 docker exec -it ollama ollama pull qwen3:8b
+docker exec -it ollama ollama pull gemma3:12b
 ```
 
 Pastikan Ollama berjalan: `curl http://localhost:11434`
 
 ### 3. Siapkan PDF
 
-Letakkan file PDF di `data/raw/` (sudah ada `Buku 3 - Pasar Modal.pdf` secara default).
+Letakkan file PDF di `data/raw/` (sudah ada `Buku 3 - Pasar Modal.pdf` dan `Kuesioner-Profil-Risiko.pdf` secara default; `build_index.py` mengindeks semua PDF di folder tersebut).
 
 ### 4. Bangun Vector Index
 
@@ -51,7 +52,7 @@ Letakkan file PDF di `data/raw/` (sudah ada `Buku 3 - Pasar Modal.pdf` secara de
 python scripts/build_index.py
 ```
 
-Proses: membaca PDF → chunking (chunk_size=500, overlap=100) → embedding (paraphrase-multilingual-MiniLM-L12-v2) → simpan ke ChromaDB di folder `chroma_db/`.
+Proses: membaca PDF → chunking (chunk_size=500, overlap=100) → embedding (BAAI/bge-m3) → simpan ke ChromaDB di folder `chroma_db/`.
 
 ### 5. Jalankan
 
@@ -78,7 +79,10 @@ npm run dev
 ├── api/
 │   └── main.py              # FastAPI server
 ├── scripts/
-│   └── build_index.py       # Bangun vector store dari PDF
+│   ├── build_index.py       # Bangun vector store dari PDF
+│   ├── cek_chunk.py         # Inspeksi isi ChromaDB
+│   ├── generate_faq.py      # Hasilkan FAQ dari chunk
+│   └── extract_istilah.py   # Ekstrak glosarium ke istilah.json
 ├── src/
 │   ├── rag/
 │   │   ├── chain.py         # RAG pipeline utama
@@ -91,18 +95,27 @@ npm run dev
 │   └── kuesioner/
 │       ├── data.py          # Load data kuesioner
 │       └── extract.py       # Ekstrak PDF kuesioner
-├── evaluation/              # Evaluasi sistem (metrik RAGAS + retrieval + rewrite)
-│   ├── test_batch.py        # Uji batch 165 pertanyaan (MISS detection)
-│   ├── judge_prompts.py     # Prompt LLM-judge (qwen3:8b)
-│   ├── evaluate_quality.py  # Answer relevancy, faithfulness, context recall/precision
-│   ├── factual_scoring.py   # Scoring manual factual correctness (sampel 45)
-│   ├── eval_retrieval_recall.py  # Recall@k & MRR retrieval
-│   ├── eval_ablation_rewrite.py  # Ablation rewrite ON vs OFF (multi-turn)
-│   └── data/                # questions, hasil batch, label, skenario, output
+├── evaluation/              # Evaluasi sistem
+│   ├── common/              # Helper, path kanonik, dan trace
+│   ├── ci/                  # Statistik dan confidence interval
+│   ├── benchmark/           # Batch, kualitas, ablasi, latency, sweep retrieval
+│   ├── comparative/         # Runner dan analisis dua judge
+│   ├── validation/          # Validasi hasil run
+│   ├── reporting/           # Ekspor CSV, prompt/config, dan metadata
+│   └── data/
+│       ├── input/           # Pertanyaan, label, skenario, kontrol CREL
+│       ├── baseline/{raw,summary}
+│       ├── v2a/{raw,summary}
+│       ├── v2b/{raw,summary,validation}
+│       ├── v2c/{raw,analysis,sweep}
+│       ├── tables/          # Tabel CSV kanonik
+│       ├── manifests/       # Manifest, run metadata, prompt config
+│       ├── review/          # Review manual baseline dan validasi judge
+│       └── archive/         # Arsip baseline 2026-10-23
 ├── frontend/                # Next.js web UI
 ├── data/
-│   ├── raw/                 # PDF sumber
-│   └── kuesioner.json   # Data kuesioner (hasil ekstrak)
+│   ├── raw/                 # PDF sumber (2 file)
+│   └── kuesioner.json       # Data kuesioner (hasil ekstrak)
 ├── chroma_db/               # Vector store (auto-generated, jangan di-commit)
 └── requirements.txt
 ```
@@ -110,6 +123,9 @@ npm run dev
 ### Catatan Penting
 
 - File `.env` dan folder `chroma_db/` sudah di-*gitignore* — tidak perlu diatur ulang
-- Model embedding (`paraphrase-multilingual-MiniLM-L12-v2`) akan ter-download otomatis saat `build_index.py` pertama kali dijalankan
-- Default retriever: similarity search dengan k=6
+- Model embedding (`BAAI/bge-m3`) akan ter-download otomatis saat `build_index.py` pertama kali dijalankan
+- Default retriever: similarity search dengan k=10
+- Evaluasi V2b memakai generator `qwen3:8b` (`num_ctx=4096`, `num_predict=512`) dan dua judge setara: `gemma3:12b` dan `qwen3:8b` (`num_ctx=4096`, `num_predict=300`, thinking off); rincian ada di `evaluation/data/manifests/MANIFEST_ENV.json`
+- Skor dua judge dilaporkan terpisah dan tidak digabung; Qwen3:8b juga generator sehingga risiko self-preference dicatat
+- Baseline rule dibekukan di `evaluation/data/manifests/baseline_rule_spec_v2.json`; runner judge ada di `evaluation/comparative/evaluate_judges.py`
 - Semua proses berjalan lokal — tidak perlu koneksi internet setelah Ollama dan embedding model ter-download

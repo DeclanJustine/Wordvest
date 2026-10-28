@@ -12,8 +12,6 @@ from src.rag.store import add_documents, clear_collection
 def main():
     pdf_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "raw")
 
-    print("=== Building Vector Store ===\n")
-
     existing = None
     try:
         from src.rag.store import get_vectorstore
@@ -26,35 +24,23 @@ def main():
         if resp.lower() != "y":
             print("Dibatalkan.")
             return
-        print("Menghapus collection lama...")
         clear_collection()
 
     all_docs = []
 
-    print("1. Memuat PDF...")
+
     if os.path.exists(pdf_dir) and os.listdir(pdf_dir):
         pdfs = load_pdfs(pdf_dir)
-        print(f"   Ditemukan {len(pdfs)} halaman PDF")
         all_docs.extend(pdfs)
     else:
-        print("   Tidak ada PDF ditemukan")
+        print("Tidak ada PDF")
 
     if not all_docs:
-        print("\nTidak ada dokumen ditemukan!")
+        print("\nTidak ada dokumen")
         return
 
-    print(f"\nTotal dokumen: {len(all_docs)}")
-
-    print("\n3. Splitting dokumen...")
     chunks = split_documents(all_docs)
-    print(f"   Total chunks: {len(chunks)}")
-
-    print("\n4. Membuat embedding dan menyimpan ke ChromaDB...")
     add_documents(chunks)
-    print(f"   Tersimpan di: {CHROMA_DIR}")
-
-    print("\n=== Selesai! ===")
-
 
 if __name__ == "__main__":
     main()

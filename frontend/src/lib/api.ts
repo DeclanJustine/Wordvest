@@ -15,11 +15,3 @@ export async function sendChat(sessionId: string, message: string) {
   if (!res.ok) throw new Error("Gagal mengirim pesan")
   return res.json()
 }
-
-export async function resetSession(sessionId: string) {
-  await fetch(`${API_BASE}/api/reset`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ session_id: sessionId }),
-  })
-}

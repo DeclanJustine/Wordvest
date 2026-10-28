@@ -3,7 +3,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, field_validator
 
 from src.rag.chain import build_rag_chain
 from src.rag.history import clear_session
@@ -26,8 +26,16 @@ rag = None
 
 
 class ChatRequest(BaseModel):
-    session_id: str
-    message: str
+    session_id: str = Field(min_length=1)
+    message: str = Field(min_length=1)
+
+    @field_validator("message")
+    @classmethod
+    def message_must_not_be_blank(cls, value: str) -> str:
+        value = value.strip()
+        if not value:
+            raise ValueError("message tidak boleh kosong")
+        return value
 
 
 class ResetRequest(BaseModel):

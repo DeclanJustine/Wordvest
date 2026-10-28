@@ -1,0 +1,34 @@
+[
+  {
+    "question": "Apa itu pasar modal?",
+    "answer": "Pasar modal adalah sarana pendanaan bagi perusahaan dan pemerintah serta tempat berinvestasi bagi pemilik dana, dengan instrumen seperti saham, obligasi, Reksa Dana, dan derivatif yang memiliki jangka waktu lebih dari satu tahun. Ia berbeda dari pasar uang karena fokus pada investasi jangka panjang, sementara produk derivatif seperti komoditas atau valas termasuk dalam kategori berbeda. Pasar modal juga berperan dalam menyebarluaskan kepemilikan perusahaan, menciptakan lapangan kerja, serta mendorong laju pembangunan ekonomi melalui keterbukaan dan profesionalisme industri.",
+    "chunk": "23\nBuku 3 – Pasar Modal\nSeri Literasi Keuangan\nPasar modal merupakan sarana pendanaan bagi \nperusahaan dan pemerintah, dan sebagai sarana \nkegiatan berinvestasi bagi pemilik dana. Dengan \ndemikian, pasar modal memfasilitasi berbagai sarana \ndan prasarana kegiatan jual beli dan kegiatan terkait \nlainnya. \nBagi anda yang awam, terkadang masih tidak bisa \nmembedakan antara pasar modal dengan pasar \nuang. Pasar modal merupakan instrumen investasi \njangka panjang dengan jangka waktu lebih dari 1",
+    "source": "Buku 3 - Pasar Modal.pdf",
+    "page": 22,
+    "covered": true
+  },
+  {
+    "question": "Apa bedanya saham dan obligasi?",
+    "answer": "Saham dan obligasi berbeda dalam mekanisme transaksi, hak pemilik, dan tujuan investasi. Transaksi saham dilakukan melalui bursa saham, sementara obligasi biasanya diperdagangkan di pasar sekunder tanpa melalui bursa atau Over The Counter. Saham mewakili kepemilikan atas perusahaan, sehingga pemegang saham memiliki hak suara dan keuntungan dari laba perusahaan, sedangkan obligasi adalah bukti hutang perusahaan, sehingga pemegang obligasi berstatus sebagai pemberi pinjaman yang berhak mendapatkan bunga tetap. Kedua instrumen ini juga berperan dalam pendanaan perusahaan, dengan saham digunakan untuk ekspansi dan obligasi untuk memperoleh dana melalui utang.",
+    "chunk": "sekunder pada umumnya, yang membedakan antara saham dengan obligasi \nadalah bahwa transaksi saham dilakukan melalui fasilitas bursa, sementara \nuntuk transaksi obligasi dilakukan tidak melalui fasilitas bursa atau Over The \nCounter.\nGambar 17 Ilustrasi Pasar Perdana dan Pasar Sekunder",
+    "source": "Buku 3 - Pasar Modal.pdf",
+    "page": 125,
+    "covered": true
+  },
+  {
+    "question": "Apa itu IPO?",
+    "answer": "IPO, atau Initial Public Offering, adalah proses di mana perusahaan tertutup menjadi perusahaan terbuka dengan menawarkan dan menjual sebagian sahamnya kepada publik serta mencatatkan sahamnya di bursa efek. Sebelum melakukan IPO, calon perusahaan harus memenuhi syarat seperti memiliki laba usaha dan laba bersih, serta mengikuti prinsip kesanggupan penuh (full commitment) dalam perjanjian penjaminan emisi. Setelah IPO, emiten wajib memberikan informasi yang cukup kepada pemegang saham dan memastikan transparansi dalam pelaporan keuangan serta jaminan atas kerugian yang mungkin terjadi.",
+    "chunk": "selama enam tahun setiap hari Zuckerberg memprogram di depan komputer.\nSumber : www.forbes.com\nProses Go Public atau IPO \n(Initial Public Offering)\nSemua perusahaan tertutup memiliki kesempatan untuk menjadi perusahaan \nterbuka dengan menawarkan dan menjual sebagian sahamnya kepada publik, \ndan mencatatkan sahamnya di PT BEI atau disebut sebagai “Bursa”. Selanjutnya \nproses tersebut disebut sebagai “go public”. \nKeputusan untuk go public merupakan keputusan bisnis yang dipilih setelah",
+    "source": "Buku 3 - Pasar Modal.pdf",
+    "page": 115,
+    "covered": true
+  },
+  {
+    "question": "Apa itu reksa dana?",
+    "answer": "Reksa dana adalah wadah yang digunakan untuk menghimpun dana dari masyarakat pemodal untuk selanjutnya diinvestasikan dalam portofolio efek oleh manajer investasi. Bentuk investasi dalam reksa dana dapat berupa efek bersifat utang, ekuitas, atau kombinasi keduanya, tergantung pada jenis reksa dana yang dipilih, seperti reksa dana saham, pendapatan tetap, pasar uang, atau campuran. Tujuan utamanya adalah mengelola dana secara profesional untuk memberikan imbal hasil yang sesuai dengan risiko yang diterima.",
+    "chunk": "dengan persyaratan penawaran yang belum dapat ditentukan. \nREKSA DANA \nWadah yang dipergunakan untuk menghimpun dana dari masyarakat pemodal \nuntuk selanjutnya diinvestasikan dalam portofolio Efek oleh Manajer Investasi.",
+    "source": "Buku 3 - Pasar Modal.pdf",
+    "page": 256,
+    "covered": true
+  }
+]
