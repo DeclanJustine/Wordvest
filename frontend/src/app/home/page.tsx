@@ -147,8 +147,8 @@ export default function HomePage() {
                   Pertama, kuesioner profil risiko untuk mengetahui tipe investormu,
                   apakah konservatif, moderat, atau agresif. Kedua, Chat AI untuk
                   bertanya bebas tentang istilah kapan saja, lengkap dengan fitur
-                  ekspor percakapan. Ketiga, FAQ berisi pertanyaan umum yang jawabannya
-                  diambil langsung dari materi. Keempat, halaman Sumber Data yang
+                  ekspor percakapan. Ketiga, FAQ yang menjelaskan alasan, manfaat, dan
+                  batasan penggunaan Wordvest. Keempat, halaman Sumber Data yang
                   transparan berisi sampul buku, daftar isi, dan tautan resmi OJK.
                 </p>
                 <p>

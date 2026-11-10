@@ -1,17 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import faqChunks from "@/data/faq-chunks.json"
+import faqItems from "@/data/faq.json"
 
-type FaqEntry = {
+type FaqItem = {
   question: string
   answer: string
-  source: string | null
-  page: number | null
-  covered: boolean
 }
 
-const faqs = faqChunks as FaqEntry[]
+const faqs = faqItems as FaqItem[]
 
 export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(0)
@@ -42,13 +39,6 @@ export default function FaqSection() {
             {isOpen && (
               <div className="pb-4">
                 <p className="text-[15px] text-[#6B6B6B] leading-relaxed whitespace-pre-line text-justify">{faq.answer}</p>
-                {faq.covered && faq.source ? (
-                  <p className="mt-2 text-[13px] text-zinc-400">
-                    Sumber: {faq.source}{faq.page !== null ? `, hal. ${faq.page}` : ""}
-                  </p>
-                ) : (
-                  <p className="mt-2 text-[13px] text-zinc-400 italic">Ringkasan umum</p>
-                )}
               </div>
             )}
           </div>

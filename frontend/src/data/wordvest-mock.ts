@@ -12,6 +12,6 @@ export const guideSteps = [
   {
     title: "Dalami lewat FAQ dan sumber",
     description:
-      "Masih kurang? Buka FAQ untuk pertanyaan umum yang jawabannya sudah dilengkapi nomor halaman buku. Kalau ingin membaca materinya langsung, section Sumber Data menyediakan sampul buku, daftar isi, dan tautan resmi OJK untuk mengunduh Buku 3 - Pasar Modal.",
+      "Masih kurang? Buka FAQ untuk memahami alasan, manfaat, dan batasan penggunaan Wordvest. Kalau ingin membaca materinya langsung, section Sumber Data menyediakan sampul buku, daftar isi, dan tautan resmi OJK untuk mengunduh Buku 3 - Pasar Modal.",
   },
 ]

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { useChat } from "@/context/chat-context"
 import ChatBubble from "@/components/chat-bubble"
 import ChatInput from "@/components/chat-input"
+import { exportChatToPdf } from "@/lib/chat-pdf"
 
 const exampleQuestions = [
   "Apa itu saham?",
@@ -21,25 +22,17 @@ export default function ChatSection() {
     scrollRef.current?.scrollTo({ top: scrollRef.current?.scrollHeight })
   }, [messages, isLoading])
 
-  function handleExportChat() {
+  async function handleExportChat() {
     if (!messages.some((msg) => msg.role === "user")) {
       alert("Tidak ada percakapan untuk diekspor.")
       return
     }
 
-    const lines = messages.map((msg) => {
-      const prefix = msg.role === "user" ? "Anda" : "AI"
-      return `${prefix}: ${msg.content}`
-    })
-    const content = lines.join("\n\n")
-
-    const blob = new Blob([content], { type: "text/plain;charset=utf-8" })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement("a")
-    a.href = url
-    a.download = `riwayat_chat_${new Date().toISOString().slice(0, 10)}.txt`
-    a.click()
-    URL.revokeObjectURL(url)
+    try {
+      await exportChatToPdf(messages)
+    } catch {
+      alert("Gagal membuat file PDF. Silakan coba lagi.")
+    }
   }
 
   return (

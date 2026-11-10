@@ -80,9 +80,7 @@ npm run dev
 │   └── main.py              # FastAPI server
 ├── scripts/
 │   ├── build_index.py       # Bangun vector store dari PDF
-│   ├── cek_chunk.py         # Inspeksi isi ChromaDB
-│   ├── generate_faq.py      # Hasilkan FAQ dari chunk
-│   └── extract_istilah.py   # Ekstrak glosarium ke istilah.json
+│   └── cek_chunk.py         # Inspeksi isi ChromaDB
 ├── src/
 │   ├── rag/
 │   │   ├── chain.py         # RAG pipeline utama
