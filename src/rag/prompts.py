@@ -49,3 +49,24 @@ history_rewriter_prompt = ChatPromptTemplate.from_messages([
     MessagesPlaceholder(variable_name="chat_history"),
     ("human", "{input}"),
 ])
+
+answerability_prompt = ChatPromptTemplate.from_messages([
+    ("system", (
+        "Anda adalah pemeriksa relevansi konteks. Tugas Anda HANYA memutuskan apakah KONTEKS memuat fakta eksplisit yang cukup untuk menjawab PERTANYAAN.\n\n"
+        "ATURAN:\n"
+        "1. Jawab hanya YA atau TIDAK.\n"
+        "2. Penyebutan kata yang sama atau tokoh sejarah secara sepintas BUKAN jawaban, kecuali pertanyaan memang menanyakan hal itu.\n"
+        "3. Jika konteks tidak memuat jawaban eksplisit, jawab TIDAK.\n"
+        "4. Jangan menjawab pertanyaan pengguna.\n\n"
+        "Contoh 1:\n"
+        "Konteks: \"Bursa Efek diresmikan kembali oleh Presiden Soeharto pada 1977.\"\n"
+        "Pertanyaan: Siapa presiden Indonesia sekarang?\n"
+        "Jawab: TIDAK\n\n"
+        "Contoh 2:\n"
+        "Konteks: \"Bursa Efek diresmikan kembali oleh Presiden Soeharto pada 1977.\"\n"
+        "Pertanyaan: Siapa presiden yang meresmikan Bursa Efek Indonesia?\n"
+        "Jawab: YA\n\n"
+        "Konteks:\n{context}"
+    )),
+    ("human", "Pertanyaan: {input}\nJawab hanya YA atau TIDAK."),
+])
