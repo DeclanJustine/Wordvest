@@ -14,13 +14,19 @@ const exampleQuestions = [
 ]
 
 export default function ChatSection() {
-  const { state, sendMessage, hydrated } = useChat()
+  const { state, sendMessage, resetChat, hydrated } = useChat()
   const { messages, isLoading, chatError } = state
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current?.scrollHeight })
   }, [messages, isLoading])
+
+  async function handleResetChat() {
+    if (!confirm("Hapus seluruh riwayat chat?")) return
+    const ok = await resetChat()
+    if (!ok) alert("Gagal menghapus riwayat chat.")
+  }
 
   async function handleExportChat() {
     if (!messages.some((msg) => msg.role === "user")) {
@@ -42,12 +48,20 @@ export default function ChatSection() {
           <h3 className="text-lg font-bold text-[#242424]">Wordvest - AI Edukasi Dasar Pasar Modal</h3>
           <p className="text-sm text-[#6B6B6B]">Tanyakan apa saja tentang istilah pasar modal Indonesia</p>
         </div>
-        <button
-          onClick={handleExportChat}
-          className="shrink-0 px-3 py-1 text-sm bg-zinc-100 hover:bg-zinc-200 rounded transition-colors cursor-pointer"
-        >
-          Ekspor
-        </button>
+        <div className="shrink-0 flex items-center gap-2">
+          <button
+            onClick={handleResetChat}
+            className="px-3 py-1 text-sm bg-zinc-100 hover:bg-zinc-200 rounded transition-colors cursor-pointer"
+          >
+            Hapus riwayat
+          </button>
+          <button
+            onClick={handleExportChat}
+            className="px-3 py-1 text-sm bg-zinc-100 hover:bg-zinc-200 rounded transition-colors cursor-pointer"
+          >
+            Ekspor
+          </button>
+        </div>
       </div>
 
       <div ref={scrollRef} className="h-[420px] overflow-y-auto p-4 space-y-1 bg-white">

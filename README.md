@@ -5,6 +5,7 @@ Asisten berbasis **Retrieval-Augmented Generation (RAG)** untuk menjawab pertany
 ### Fitur
 
 - Tanya jawab interaktif via **Web UI (Next.js + FastAPI)** atau **CLI**
+- Akun lokal (register/login) dengan profil risiko dan riwayat chat tersimpan di SQLite
 - History-aware: bisa menanyakan follow-up tanpa kehilangan konteks
 - Prompt strict anti-halusinasi (hanya jawab dari konteks, fallback `"Maaf, informasi tidak tersedia pada referensi"`)
 - Normalisasi input Bahasa Indonesia (ejaan baku/tidak baku, misal "reksadana" → "reksa dana")
@@ -19,8 +20,8 @@ Asisten berbasis **Retrieval-Augmented Generation (RAG)** untuk menjawab pertany
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/DeclanJustine/AI_Assistant_Edukasi_Dasar_Pasar_Modal.git
-cd AI_Assistant_Edukasi_Dasar_Pasar_Modal
+git clone https://github.com/DeclanJustine/Wordvest.git
+cd Wordvest
 python -m venv .venv
 
 # Linux / Mac
@@ -66,10 +67,30 @@ python cli.py
 # Terminal 1 - API
 python -m uvicorn api.main:app --port 8000
 
-# Terminal 2 - Frontend
+# Terminal 2 - Frontend (development)
 cd frontend
 npm run dev
 ```
+
+Untuk demo **offline**, build frontend sekali saat masih online (font Google perlu diunduh saat build), lalu jalankan hasil build:
+
+```bash
+cd frontend
+npm install
+npm run build
+npm start
+```
+
+Frontend mem-proxy `/api` ke `http://127.0.0.1:8000`, jadi buka `http://localhost:3000` dan jangan mengakses API langsung dari browser.
+
+### Akun & Database
+
+- Buka `/register` untuk membuat akun, lalu `/login` untuk masuk.
+- Database SQLite dibuat otomatis di `data/app.db` saat API pertama kali dijalankan.
+- Sesi login disimpan sebagai cookie `HttpOnly` (`wordvest_session`) selama 30 hari.
+- Profil risiko dan riwayat chat terikat ke akun; riwayat bisa dihapus dari tombol **Hapus riwayat** di Chat AI.
+- Untuk mereset semua akun dan data, hentikan API lalu hapus `data/app.db`.
+- Konfigurasi opsional ada di `.env` (lihat `.env.example`); tanpa `.env` semuanya memakai default lokal.
 
 ### Struktur Proyek
 
@@ -77,7 +98,11 @@ npm run dev
 ├── cli.py                   # Terminal client
 ├── config.py                # Konfigurasi (model, chunk size, dll)
 ├── api/
-│   └── main.py              # FastAPI server
+│   ├── main.py              # FastAPI server (auth, profil, chat)
+│   ├── auth.py              # Password, session, cookie
+│   ├── db.py                # Engine + session SQLite
+│   ├── models.py            # Tabel user, session, profil, chat
+│   └── chat_history.py      # History chat berbasis SQLite
 ├── scripts/
 │   ├── build_index.py       # Bangun vector store dari PDF
 │   └── cek_chunk.py         # Inspeksi isi ChromaDB
@@ -113,14 +138,16 @@ npm run dev
 ├── frontend/                # Next.js web UI
 ├── data/
 │   ├── raw/                 # PDF sumber (2 file)
-│   └── kuesioner.json       # Data kuesioner (hasil ekstrak)
+│   ├── kuesioner.json       # Data kuesioner (hasil ekstrak)
+│   └── app.db               # Database akun/chat (auto-generated, jangan di-commit)
 ├── chroma_db/               # Vector store (auto-generated, jangan di-commit)
 └── requirements.txt
 ```
 
 ### Catatan Penting
 
-- File `.env` dan folder `chroma_db/` sudah di-*gitignore* — tidak perlu diatur ulang
+- File `.env`, `data/app.db`, dan folder `chroma_db/` sudah di-*gitignore* — tidak perlu diatur ulang
+- Frontend production (`npm start`) bisa dipakai offline setelah `npm run build` dilakukan sekali saat online
 - Model embedding (`BAAI/bge-m3`) akan ter-download otomatis saat `build_index.py` pertama kali dijalankan
 - Default retriever: similarity search dengan k=10
 - Evaluasi V2b memakai generator `qwen3:8b` (`num_ctx=4096`, `num_predict=512`) dan dua judge setara: `gemma3:12b` dan `qwen3:8b` (`num_ctx=4096`, `num_predict=300`, thinking off); rincian ada di `evaluation/data/manifests/MANIFEST_ENV.json`

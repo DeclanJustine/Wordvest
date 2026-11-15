@@ -84,7 +84,7 @@ def format_docs(docs):
     return "\n\n".join((doc.page_content or "") for doc in docs)
 
 
-def build_rag_chain(llm=None, retriever=None):
+def build_rag_chain(llm=None, retriever=None, history_getter=None):
     if llm is None:
         llm = get_llm()
     if retriever is None:
@@ -117,7 +117,7 @@ def build_rag_chain(llm=None, retriever=None):
 
     chain = RunnableWithMessageHistory(
         rag_chain,
-        get_session_history,
+        history_getter or get_session_history,
         input_messages_key="input",
         history_messages_key="chat_history",
         output_messages_key="answer",

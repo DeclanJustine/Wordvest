@@ -1,24 +1,29 @@
 "use client"
 
-import { createContext, useContext, useReducer, useEffect, useState, type ReactNode } from "react"
-import type { KuesionerData, Profile, Message } from "@/lib/types"
-import { fetchKuesioner, sendChat } from "@/lib/api"
-
-interface Answer {
-  text: string
-  score: number
-}
+import { createContext, useContext, useReducer, useEffect, type ReactNode } from "react"
+import type { Answer, KuesionerData, Message, Profile } from "@/lib/types"
+import {
+  ApiError,
+  fetchKuesioner,
+  getChatHistory,
+  getProfile,
+  resetChat as apiResetChat,
+  saveProfile,
+  sendChat,
+} from "@/lib/api"
+import { useAuth } from "@/context/auth-context"
 
 interface ChatState {
-  sessionId: string
   currentStep: number
   answers: Answer[]
   totalScore: number
   savedAnswers: Answer[]
   savedTotalScore: number
   profile: Profile | null
+  profileDirty: boolean
   kuesionerData: KuesionerData | null
   messages: Message[]
+  hydrated: boolean
   isLoading: boolean
   error: string | null
   chatError: string | null
@@ -29,18 +34,27 @@ type Action =
   | { type: "ANSWER_QUESTION"; payload: Answer }
   | { type: "GO_TO_STEP"; payload: number }
   | { type: "CALCULATE_PROFILE" }
+  | { type: "PROFILE_SAVED" }
   | { type: "ADD_MESSAGE"; payload: Message }
   | { type: "SET_LOADING"; payload: boolean }
   | { type: "SET_ERROR"; payload: string | null }
   | { type: "SET_CHAT_ERROR"; payload: string | null }
-  | { type: "HYDRATE"; payload: PersistedState }
+  | {
+      type: "HYDRATE_DATA"
+      payload: {
+        profile: Profile | null
+        answers: Answer[]
+        totalScore: number
+        messages: Message[]
+      }
+    }
+  | { type: "HYDRATE_START" }
+  | { type: "HYDRATE_ERROR"; payload: string }
+  | { type: "RESET_DATA" }
+  | { type: "RESET_CHAT" }
   | { type: "RESET_QUIZ" }
 
-function generateId(): string {
-  return crypto.randomUUID()
-}
-
-function getProfile(profiles: Profile[], totalScore: number): Profile {
+function matchProfile(profiles: Profile[], totalScore: number): Profile {
   for (const p of profiles) {
     if (totalScore >= p.min_score && totalScore <= p.max_score) return p
   }
@@ -54,48 +68,19 @@ const GREETING: Message = {
 }
 
 const initialState: ChatState = {
-  sessionId: generateId(),
   currentStep: 0,
   answers: [],
   totalScore: 0,
   savedAnswers: [],
   savedTotalScore: 0,
   profile: null,
+  profileDirty: false,
   kuesionerData: null,
   messages: [GREETING],
+  hydrated: false,
   isLoading: false,
   error: null,
   chatError: null,
-}
-
-const STORAGE_KEY = "chatState"
-
-interface PersistedState {
-  profile: Profile | null
-  savedAnswers: Answer[]
-  savedTotalScore: number
-}
-
-const EMPTY_PERSISTED_STATE: PersistedState = {
-  profile: null,
-  savedAnswers: [],
-  savedTotalScore: 0,
-}
-
-function loadPersistedState(): PersistedState {
-  try {
-    if (typeof window === "undefined") return EMPTY_PERSISTED_STATE
-    const raw = window.localStorage.getItem(STORAGE_KEY)
-    if (!raw) return EMPTY_PERSISTED_STATE
-    const data = JSON.parse(raw)
-    return {
-      profile: data.profile && typeof data.profile === "object" ? (data.profile as Profile) : null,
-      savedAnswers: Array.isArray(data.savedAnswers) ? (data.savedAnswers as Answer[]) : [],
-      savedTotalScore: typeof data.savedTotalScore === "number" ? data.savedTotalScore : 0,
-    }
-  } catch {
-    return EMPTY_PERSISTED_STATE
-  }
 }
 
 function reducer(state: ChatState, action: Action): ChatState {
@@ -113,11 +98,14 @@ function reducer(state: ChatState, action: Action): ChatState {
       if (!state.kuesionerData) return state
       return {
         ...state,
-        profile: getProfile(state.kuesionerData.profiles, state.totalScore),
+        profile: matchProfile(state.kuesionerData.profiles, state.totalScore),
         savedAnswers: state.answers,
         savedTotalScore: state.totalScore,
+        profileDirty: true,
       }
     }
+    case "PROFILE_SAVED":
+      return { ...state, profileDirty: false }
     case "ADD_MESSAGE":
       return { ...state, messages: [...state.messages, action.payload] }
     case "SET_LOADING":
@@ -126,12 +114,31 @@ function reducer(state: ChatState, action: Action): ChatState {
       return { ...state, error: action.payload }
     case "SET_CHAT_ERROR":
       return { ...state, chatError: action.payload }
-    case "HYDRATE":
+    case "HYDRATE_DATA":
       return {
         ...state,
         profile: action.payload.profile,
-        savedAnswers: action.payload.savedAnswers,
-        savedTotalScore: action.payload.savedTotalScore,
+        savedAnswers: action.payload.answers,
+        savedTotalScore: action.payload.totalScore,
+        profileDirty: false,
+        messages: [GREETING, ...action.payload.messages],
+        hydrated: true,
+      }
+    case "HYDRATE_START":
+      return { ...state, hydrated: false }
+    case "HYDRATE_ERROR":
+      return { ...state, hydrated: true, error: action.payload }
+    case "RESET_DATA":
+      return {
+        ...initialState,
+        kuesionerData: state.kuesionerData,
+        hydrated: true,
+      }
+    case "RESET_CHAT":
+      return {
+        ...state,
+        messages: [GREETING],
+        chatError: null,
       }
     case "RESET_QUIZ":
       return {
@@ -142,6 +149,7 @@ function reducer(state: ChatState, action: Action): ChatState {
         savedAnswers: [],
         savedTotalScore: 0,
         profile: null,
+        profileDirty: false,
       }
     default:
       return state
@@ -154,44 +162,91 @@ const ChatContext = createContext<{
   hydrated: boolean
   submitAnswer: (answer: Answer) => void
   sendMessage: (text: string) => Promise<void>
+  resetChat: () => Promise<boolean>
   resetQuiz: () => void
 } | null>(null)
 
 export function ChatProvider({ children }: { children: ReactNode }) {
+  const { user, loading: authLoading, logout } = useAuth()
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
     fetchKuesioner()
       .then((data) => dispatch({ type: "SET_KUESIONER", payload: data }))
-      .catch((e) => dispatch({ type: "SET_ERROR", payload: e instanceof Error ? e.message : "Gagal memuat kuesioner" }))
+      .catch((e) =>
+        dispatch({
+          type: "SET_ERROR",
+          payload: e instanceof Error ? e.message : "Gagal memuat kuesioner",
+        })
+      )
   }, [])
 
   useEffect(() => {
-    const p = loadPersistedState()
-    if (p.profile) {
-      dispatch({ type: "HYDRATE", payload: p })
-    }
-    // Reading browser-only localStorage must happen after mount to avoid
-    // SSR/client mismatch; marking hydrated enables the client-side guard.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setHydrated(true)
-  }, [])
+    if (authLoading) return
 
-  useEffect(() => {
-    if (!hydrated) return
-
-    try {
-      const payload: PersistedState = {
-        profile: state.profile,
-        savedAnswers: state.savedAnswers,
-        savedTotalScore: state.savedTotalScore,
+    let cancelled = false
+    if (!user) {
+      dispatch({ type: "RESET_DATA" })
+      return () => {
+        cancelled = true
       }
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload))
-    } catch {
-
     }
-  }, [hydrated, state.profile, state.savedAnswers, state.savedTotalScore])
+
+    dispatch({ type: "HYDRATE_START" })
+    Promise.all([getProfile(), getChatHistory()])
+      .then(([profileData, history]) => {
+        if (cancelled) return
+        dispatch({
+          type: "HYDRATE_DATA",
+          payload: {
+            profile: profileData.profile,
+            answers: profileData.answers,
+            totalScore: profileData.total_score,
+            messages: history.messages,
+          },
+        })
+      })
+      .catch((e) => {
+        if (cancelled) return
+        dispatch({
+          type: "HYDRATE_ERROR",
+          payload: e instanceof Error ? e.message : "Gagal memuat data akun",
+        })
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [authLoading, user])
+
+  useEffect(() => {
+    if (!state.hydrated || !user || !state.profileDirty || !state.profile) return
+
+    let cancelled = false
+    saveProfile(state.profile, state.savedAnswers, state.savedTotalScore)
+      .then(() => {
+        if (!cancelled) dispatch({ type: "PROFILE_SAVED" })
+      })
+      .catch((e) => {
+        if (!cancelled) {
+          dispatch({
+            type: "SET_ERROR",
+            payload: e instanceof Error ? e.message : "Gagal menyimpan profil",
+          })
+        }
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [
+    state.hydrated,
+    user,
+    state.profileDirty,
+    state.profile,
+    state.savedAnswers,
+    state.savedTotalScore,
+  ])
 
   function submitAnswer(answer: Answer) {
     dispatch({ type: "ANSWER_QUESTION", payload: answer })
@@ -209,21 +264,54 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     dispatch({ type: "SET_CHAT_ERROR", payload: null })
 
     try {
-      const result = await sendChat(state.sessionId, text)
+      const result = await sendChat(text)
       dispatch({
         type: "ADD_MESSAGE",
         payload: { role: "assistant", content: result.answer },
       })
     } catch (e) {
-      dispatch({ type: "SET_CHAT_ERROR", payload: e instanceof Error ? e.message : "Terjadi kesalahan" })
+      if (e instanceof ApiError && e.status === 401) {
+        await logout()
+        dispatch({ type: "SET_CHAT_ERROR", payload: "Sesi berakhir. Silakan login lagi." })
+      } else {
+        dispatch({
+          type: "SET_CHAT_ERROR",
+          payload: e instanceof Error ? e.message : "Terjadi kesalahan",
+        })
+      }
     } finally {
       dispatch({ type: "SET_LOADING", payload: false })
     }
   }
 
+  async function resetChat() {
+    try {
+      await apiResetChat()
+      dispatch({ type: "RESET_CHAT" })
+      return true
+    } catch (e) {
+      if (e instanceof ApiError && e.status === 401) {
+        await logout()
+      }
+      dispatch({
+        type: "SET_CHAT_ERROR",
+        payload: e instanceof Error ? e.message : "Gagal menghapus riwayat",
+      })
+      return false
+    }
+  }
+
   return (
     <ChatContext.Provider
-      value={{ state, dispatch, hydrated, submitAnswer, sendMessage, resetQuiz }}
+      value={{
+        state,
+        dispatch,
+        hydrated: state.hydrated,
+        submitAnswer,
+        sendMessage,
+        resetChat,
+        resetQuiz,
+      }}
     >
       {children}
     </ChatContext.Provider>

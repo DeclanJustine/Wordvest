@@ -1,4 +1,7 @@
 chroma_db/
+data/app.db
+data/*.db-wal
+data/*.db-shm
 data/scraped/
 data/chunks_dump.txt
 evaluation/data/index_sweep/
