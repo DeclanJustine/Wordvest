@@ -16,7 +16,7 @@ export default function ProfilSection() {
 
   function handleRetake() {
     resetQuiz()
-    router.push("/")
+    router.push("/kuesioner")
   }
 
   if (!hydrated) {
@@ -48,7 +48,7 @@ export default function ProfilSection() {
           Isi kuesioner singkat untuk mengetahui tipe investormu.
         </p>
         <Link
-          href="/"
+          href="/kuesioner"
           className="inline-block mt-4 px-6 py-2.5 bg-[#242424] text-white text-[15px] font-medium rounded-lg hover:bg-black transition-all hover:-translate-y-0.5"
         >
           Isi Kuesioner

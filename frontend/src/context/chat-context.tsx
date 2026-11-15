@@ -132,7 +132,7 @@ function reducer(state: ChatState, action: Action): ChatState {
       return {
         ...initialState,
         kuesionerData: state.kuesionerData,
-        hydrated: true,
+        hydrated: false,
       }
     case "RESET_CHAT":
       return {

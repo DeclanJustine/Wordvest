@@ -1,6 +1,8 @@
 "use client"
 
+import { useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useChat } from "@/context/chat-context"
 import TopBar from "@/components/home/TopBar"
 import HomeSidebar from "@/components/home/HomeSidebar"
@@ -65,6 +67,22 @@ const heroStats = ["1073 chunk", "1 sumber resmi"]
 
 export default function HomePage() {
   const { state, hydrated } = useChat()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (hydrated && !state.profile) router.replace("/kuesioner")
+  }, [hydrated, state.profile, router])
+
+  if (!hydrated || !state.profile) {
+    return (
+      <div className="min-h-dvh bg-white text-[#242424]">
+        <TopBar />
+        <div className="pt-[52px] min-h-[calc(100dvh-52px)] flex items-center justify-center">
+          <p className="text-[15px] text-[#6B6B6B]">Memuat...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-dvh bg-white text-[#242424]">
@@ -196,7 +214,7 @@ export default function HomePage() {
                     Kamu belum mengisi kuesioner profil risiko.
                   </p>
                   <Link
-                    href="/"
+                    href="/kuesioner"
                     className="inline-block mt-3 px-6 py-2 bg-stone-600 text-white rounded-lg hover:bg-stone-800 transition-colors text-[15px]"
                   >
                     Isi Kuesioner

@@ -35,7 +35,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
       } else {
         await login(email, password)
       }
-      router.replace("/home")
+      router.replace("/")
     } catch (e) {
       if (e instanceof ApiError) {
         if (e.status === 401) setError("Email atau password salah")
@@ -61,7 +61,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
             Akun Wordvest
           </p>
           <h1 className="mt-2 font-serif text-[42px] font-bold tracking-tight leading-none">
-            {isRegister ? "Buat akun." : "Masuk."}
+            {isRegister ? "Buat akun" : "Masuk"}
           </h1>
           <p className="mt-3 text-[15px] text-[#6B6B6B] leading-relaxed">
             {isRegister
